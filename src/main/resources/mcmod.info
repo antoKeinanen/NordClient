@@ -1,0 +1,16 @@
+[
+{
+  "modid": "NCL",
+  "name": "NordClient",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["J_M"],
+  "credits": "Huddle, XeonLyfe, VacCat",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
