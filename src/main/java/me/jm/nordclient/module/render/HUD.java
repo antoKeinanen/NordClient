@@ -18,7 +18,6 @@ public class HUD extends Module {
 	public HUD() {
 		super("HUD", "modules on screen", Category.RENDER);
 		NordClient.instance.settingsManager.rSetting(new Setting("Chroma", this, true));
-		NordClient.instance.settingsManager.rSetting(new Setting("Color", this, "#FFFFFF"));
 
 	}
 	

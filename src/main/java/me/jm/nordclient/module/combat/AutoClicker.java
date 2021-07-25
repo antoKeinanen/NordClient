@@ -1,10 +1,9 @@
-/**
-package cf.vaccat.catclient.module.combat;
+package me.jm.nordclient.module.combat;
 
-import cf.vaccat.catclient.Tutorial;
-import cf.vaccat.catclient.module.Category;
-import cf.vaccat.catclient.module.Module;
-import cf.vaccat.catclient.settings.Setting;
+import me.jm.nordclient.NordClient;
+import me.jm.nordclient.module.Category;
+import me.jm.nordclient.module.Module;
+import me.jm.nordclient.settings.Setting;
 import org.lwjgl.input.Mouse;
 
 import io.netty.util.internal.ThreadLocalRandom;
@@ -25,8 +24,8 @@ public class AutoClicker extends Module {
 	public AutoClicker() {
 		super("AutoClicker", "clicks automatically", Category.COMBAT);
 		
-		Tutorial.instance.settingsManager.rSetting(new Setting("MinCPS", this, 8, 1, 20, false));
-		Tutorial.instance.settingsManager.rSetting(new Setting("MaxCPS", this, 12, 1, 20, false));
+		NordClient.instance.settingsManager.rSetting(new Setting("MinCPS", this, 8, 1, 20, false));
+		NordClient.instance.settingsManager.rSetting(new Setting("MaxCPS", this, 12, 1, 20, false));
 	}
 	
 	@SubscribeEvent
@@ -55,8 +54,8 @@ public class AutoClicker extends Module {
 	}
 	
 	private void updateVals() {
-		min = Tutorial.instance.settingsManager.getSettingByName(this, "MinCPS").getValDouble();
-		max = Tutorial.instance.settingsManager.getSettingByName(this, "MaxCPS").getValDouble();
+		min = NordClient.instance.settingsManager.getSettingByName(this, "MinCPS").getValDouble();
+		max = NordClient.instance.settingsManager.getSettingByName(this, "MaxCPS").getValDouble();
 		
 		if (min >= max) {
 			max = min + 1;
@@ -66,4 +65,3 @@ public class AutoClicker extends Module {
 		holdLength = speed / ThreadLocalRandom.current().nextDouble(min, max);
 	}
 }
-**/

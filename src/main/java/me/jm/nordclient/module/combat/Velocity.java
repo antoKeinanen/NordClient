@@ -15,15 +15,9 @@ import java.util.List;
 public class Velocity extends Module {
 
 	public Velocity() {
-		super("Anti Knockback", "i hate being knocked back", Category.COMBAT);
+		super("Anti Knockback", "Reduces knockback taken", Category.COMBAT);
 		NordClient.instance.settingsManager.rSetting(new Setting("Horizontal", this, 90, 0, 100, true));
 		NordClient.instance.settingsManager.rSetting(new Setting("Vertical", this, 100, 0, 100, true));
-		NordClient.instance.settingsManager.rSetting(new Setting("Mode", this, "test1", new ArrayList<String>(){{
-			add("test1");
-			add("test2");
-			add("test3");
-		}}
-		));
 	}
 	
 	@SubscribeEvent

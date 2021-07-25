@@ -42,13 +42,6 @@ public class Setting {
 		this.bval = bval;
 		this.mode = "Check";
 	}
-
-	public Setting(String name, Module parent, String color){
-		this.name = name;
-		this.parent = parent;
-		this.bval = bval;
-		this.mode = "Color";
-	}
 	
 	public Setting(String name, Module parent, double dval, double min, double max, boolean onlyint){
 		this.name = name;
