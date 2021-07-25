@@ -32,12 +32,12 @@ public class Jesus extends Module {
         }
         if(NordClient.instance.settingsManager.getSettingByName(this, "Lava").getValBoolean()){
             if(mc.player.isInLava()){
-                mc.player.addVelocity(0d, 0.01, 0d);
+                mc.player.motionY += 0.11;
                 lavaTickTimer = 0;
                 return;
             }
-            if(lavaTickTimer == 0) mc.player.addVelocity(0d, 0.1, 0d);
-            else if(lavaTickTimer == 1) mc.player.setVelocity(0d, 0d, 0d);
+            if(lavaTickTimer == 0) mc.player.motionY = 0.30;
+            else if(lavaTickTimer == 1) mc.player.motionY = 0;
             lavaTickTimer++;
         }
 
