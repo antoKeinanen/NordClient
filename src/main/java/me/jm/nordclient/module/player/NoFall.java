@@ -21,7 +21,7 @@ public class NoFall extends Module {
     }
 
     @SubscribeEvent
-    public void onLivingUpdate(LivingFallEvent e) {
+    public void onLivingFallEvent(LivingFallEvent e) {
         String mode = NordClient.instance.settingsManager.getSettingByName(this, "Mode").getValString();
         if(mode.equalsIgnoreCase("distance")){
             e.setDistance(0);
