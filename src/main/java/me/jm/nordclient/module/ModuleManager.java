@@ -2,10 +2,12 @@ package me.jm.nordclient.module;
 
 import java.util.ArrayList;
 
+import com.google.gson.annotations.JsonAdapter;
 import me.jm.nordclient.module.combat.AntiBot;
 import me.jm.nordclient.module.combat.AutoClicker;
 import me.jm.nordclient.module.combat.Velocity;
 import me.jm.nordclient.module.movement.AirJump;
+import me.jm.nordclient.module.movement.Jesus;
 import me.jm.nordclient.module.movement.Sprint;
 import me.jm.nordclient.module.player.NoFall;
 import me.jm.nordclient.module.render.ClickGUI;
@@ -25,6 +27,7 @@ public class ModuleManager {
 		this.modules.add(new AntiBot());
 		this.modules.add(new NoFall());
 		this.modules.add(new AirJump());
+		this.modules.add(new Jesus());
 	}
 	
 	public Module getModule(String name) {
