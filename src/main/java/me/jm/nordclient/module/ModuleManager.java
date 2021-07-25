@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import me.jm.nordclient.module.combat.AntiBot;
 import me.jm.nordclient.module.combat.AutoClicker;
 import me.jm.nordclient.module.combat.Velocity;
+import me.jm.nordclient.module.movement.AirJump;
 import me.jm.nordclient.module.movement.Sprint;
 import me.jm.nordclient.module.player.NoFall;
 import me.jm.nordclient.module.render.ClickGUI;
@@ -23,6 +24,7 @@ public class ModuleManager {
 		this.modules.add(new Velocity());
 		this.modules.add(new AntiBot());
 		this.modules.add(new NoFall());
+		this.modules.add(new AirJump());
 	}
 	
 	public Module getModule(String name) {
