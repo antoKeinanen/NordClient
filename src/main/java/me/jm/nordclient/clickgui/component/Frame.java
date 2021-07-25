@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import me.jm.nordclient.NordClient;
 import me.jm.nordclient.clickgui.ClickGui;
 import me.jm.nordclient.clickgui.component.components.Button;
+import me.jm.nordclient.helpers.ColorHelper;
 import me.jm.nordclient.module.Category;
 import me.jm.nordclient.module.Module;
 import org.lwjgl.opengl.GL11;
@@ -83,8 +84,10 @@ public class Frame {
 		Gui.drawRect(this.x, this.y, this.x + this.width, this.y + this.barHeight, ClickGui.color);
 		GL11.glPushMatrix();
 		GL11.glScalef(0.5f,0.5f, 0.5f);
-		fontRenderer.drawStringWithShadow(this.category.name(), (this.x + 2) * 2 + 5, (this.y + 2.5f) * 2 + 5, 0x5E81AC);
-		fontRenderer.drawStringWithShadow(this.open ? "-" : "+", (this.x + this.width - 10) * 2 + 5, (this.y + 2.5f) * 2 + 5, 0xB48EAD);
+		//name of category
+		fontRenderer.drawStringWithShadow(this.category.name(), (this.x + 2) * 2 + 5, (this.y + 2.5f) * 2 + 5, ColorHelper.WHITE02);
+		//expand or collapse btn
+		fontRenderer.drawStringWithShadow(this.open ? "-" : "+", (this.x + this.width - 10) * 2 + 5, (this.y + 2.5f) * 2 + 5, ColorHelper.WHITE02);
 		GL11.glPopMatrix();
 		if(this.open) {
 			if(!this.components.isEmpty()) {

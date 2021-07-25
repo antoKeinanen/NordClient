@@ -2,6 +2,7 @@ package me.jm.nordclient.clickgui.component.components.sub;
 
 import me.jm.nordclient.clickgui.component.Component;
 import me.jm.nordclient.clickgui.component.components.Button;
+import me.jm.nordclient.helpers.ColorHelper;
 import me.jm.nordclient.module.Module;
 import org.lwjgl.opengl.GL11;
 
@@ -32,11 +33,14 @@ public class VisibleButton extends Component { // Remove this class if you don't
 	
 	@Override
 	public void renderComponent() {
-		Gui.drawRect(parent.parent.getX() + 2, parent.parent.getY() + offset, parent.parent.getX() + (parent.parent.getWidth() * 1), parent.parent.getY() + offset + 12, this.hovered ? 0xFF222222 : 0xFF111111);
-		Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + 2, parent.parent.getY() + offset + 12, 0xFF111111);
+		//bgr
+		Gui.drawRect(parent.parent.getX() + 2, parent.parent.getY() + offset, parent.parent.getX() + (parent.parent.getWidth() * 1), parent.parent.getY() + offset + 12, ColorHelper.ToOpacityMode(ColorHelper.BGR02));
+		//side thing
+		Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + 2, parent.parent.getY() + offset + 12, ColorHelper.ToOpacityMode(ColorHelper.BGR02));
 		GL11.glPushMatrix();
 		GL11.glScalef(0.5f,0.5f, 0.5f);
-		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow("Visible: " + mod.visible, (parent.parent.getX() + 7) * 2, (parent.parent.getY() + offset + 2) * 2 + 5, -1);
+		//text
+		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow("Visible: " + mod.visible, (parent.parent.getX() + 7) * 2, (parent.parent.getY() + offset + 2) * 2 + 5, ColorHelper.WHITE02);
 		GL11.glPopMatrix(); //													    mod.visible is a public boolean variable in the Module.java class. If it's == false, the mod won't show up in the ArrayList
 	}
 	

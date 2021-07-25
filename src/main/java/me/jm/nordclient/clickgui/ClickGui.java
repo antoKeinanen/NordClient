@@ -3,6 +3,7 @@ package me.jm.nordclient.clickgui;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import me.jm.nordclient.helpers.ColorHelper;
 import me.jm.nordclient.module.Category;
 import me.jm.nordclient.clickgui.component.Component;
 import me.jm.nordclient.clickgui.component.Frame;
@@ -11,7 +12,7 @@ import net.minecraft.client.gui.GuiScreen;
 public class ClickGui extends GuiScreen {
 
 	public static ArrayList<Frame> frames;
-	public static int color = -1;
+	public static int color = ColorHelper.ToOpacityMode(ColorHelper.BGR01);
 	
 	public ClickGui() {
 		this.frames = new ArrayList<Frame>();

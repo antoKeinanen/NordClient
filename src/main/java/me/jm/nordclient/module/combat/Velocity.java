@@ -7,12 +7,23 @@ import me.jm.nordclient.settings.Setting;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Velocity extends Module {
 
 	public Velocity() {
 		super("Anti Knockback", "i hate being knocked back", Category.COMBAT);
 		NordClient.instance.settingsManager.rSetting(new Setting("Horizontal", this, 90, 0, 100, true));
 		NordClient.instance.settingsManager.rSetting(new Setting("Vertical", this, 100, 0, 100, true));
+		NordClient.instance.settingsManager.rSetting(new Setting("Mode", this, "test1", new ArrayList<String>(){{
+			add("test1");
+			add("test2");
+			add("test3");
+		}}
+		));
 	}
 	
 	@SubscribeEvent

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import me.jm.nordclient.module.Module;
 
-
 /**
  *  Made by HeroCode
  *  it's free to use

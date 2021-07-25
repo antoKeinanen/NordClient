@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import me.jm.nordclient.NordClient;
 import me.jm.nordclient.clickgui.ClickGui;
 import me.jm.nordclient.clickgui.component.Component;
+import me.jm.nordclient.helpers.ColorHelper;
 import me.jm.nordclient.module.Module;
 import me.jm.nordclient.settings.Setting;
 import org.lwjgl.opengl.GL11;
@@ -69,12 +70,12 @@ public class Button extends Component {
 	
 	@Override
 	public void renderComponent() {
-		Gui.drawRect(parent.getX(), this.parent.getY() + this.offset, parent.getX() + parent.getWidth(), this.parent.getY() + 12 + this.offset, this.isHovered ? (this.mod.isToggled() ? new Color(0xFF9700FF).darker().getRGB() : 0xFF9700FF) : (this.mod.isToggled() ? new Color(14,14,14).getRGB() : 0xFF111111));
+		Gui.drawRect(parent.getX(), this.parent.getY() + this.offset, parent.getX() + parent.getWidth(), this.parent.getY() + 12 + this.offset,this.mod.isToggled() ? ColorHelper.ToOpacityMode(ColorHelper.BGR01) : ColorHelper.ToOpacityMode(ColorHelper.BGR02));
 		GL11.glPushMatrix();
 		GL11.glScalef(0.5f,0.5f, 0.5f);
-		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(this.mod.getName(), (parent.getX() + 2) * 2, (parent.getY() + offset + 2) * 2 + 4, this.mod.isToggled() ? 0xBD62FF : -1);
+		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(this.mod.getName(), (parent.getX() + 2) * 2, (parent.getY() + offset + 2) * 2 + 4, this.mod.isToggled() ? ColorHelper.FORST02 : ColorHelper.WHITE02);
 		if(this.subcomponents.size() > 2)
-		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(this.open ? "-" : "+", (parent.getX() + parent.getWidth() - 10) * 2, (parent.getY() + offset + 2) * 2 + 4, -1);
+		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(this.open ? "-" : "+", (parent.getX() + parent.getWidth() - 10) * 2, (parent.getY() + offset + 2) * 2 + 4, ColorHelper.WHITE02);
 		GL11.glPopMatrix();
 		if(this.open) {
 			if(!this.subcomponents.isEmpty()) {

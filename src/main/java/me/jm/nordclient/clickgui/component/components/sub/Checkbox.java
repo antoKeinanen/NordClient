@@ -2,6 +2,7 @@ package me.jm.nordclient.clickgui.component.components.sub;
 
 import me.jm.nordclient.clickgui.component.Component;
 import me.jm.nordclient.clickgui.component.components.Button;
+import me.jm.nordclient.helpers.ColorHelper;
 import me.jm.nordclient.settings.Setting;
 import org.lwjgl.opengl.GL11;
 
@@ -28,19 +29,19 @@ public class Checkbox extends Component {
 	@Override
 	public void renderComponent() {
 		//bgr on hover and not hover
-		Gui.drawRect(parent.parent.getX() + 2, parent.parent.getY() + offset, parent.parent.getX() + (parent.parent.getWidth() * 1), parent.parent.getY() + offset + 12, this.hovered ? 0xFF81A1C1 : 0xFF3B4252);
-		// small side highlight
-		Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + 2, parent.parent.getY() + offset + 12, 0xFF3B4252);
+		Gui.drawRect(parent.parent.getX() + 2, parent.parent.getY() + offset, parent.parent.getX() + (parent.parent.getWidth() * 1), parent.parent.getY() + offset + 12, ColorHelper.ToOpacityMode(ColorHelper.BGR02));
+		//highlight on the left side
+		Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + 2, parent.parent.getY() + offset + 12, ColorHelper.ToOpacityMode(ColorHelper.BGR02));
 		GL11.glPushMatrix();
 		GL11.glScalef(0.5f,0.5f, 0.5f);
 		//name
-		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(this.op.getName(), (parent.parent.getX() + 10 + 4) * 2 + 5, (parent.parent.getY() + offset + 2) * 2 + 4, 0xFFE5E9F0);
+		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(this.op.getName(), (parent.parent.getX() + 10 + 4) * 2 + 5, (parent.parent.getY() + offset + 2) * 2 + 4, ColorHelper.WHITE02);
 		GL11.glPopMatrix();
 		//checkbox bgr
-		Gui.drawRect(parent.parent.getX() + 3 + 4, parent.parent.getY() + offset + 3, parent.parent.getX() + 9 + 4, parent.parent.getY() + offset + 9, 0xFF434C5E);
+		Gui.drawRect(parent.parent.getX() + 3 + 4, parent.parent.getY() + offset + 3, parent.parent.getX() + 9 + 4, parent.parent.getY() + offset + 9, ColorHelper.ToOpacityMode(ColorHelper.BGR01));
 		if(this.op.getValBoolean())
 			//checkbox when checked
-			Gui.drawRect(parent.parent.getX() + 4 + 4, parent.parent.getY() + offset + 4, parent.parent.getX() + 8 + 4, parent.parent.getY() + offset + 8, 0xFF5E81AC);
+			Gui.drawRect(parent.parent.getX() + 4 + 4, parent.parent.getY() + offset + 4, parent.parent.getX() + 8 + 4, parent.parent.getY() + offset + 8, ColorHelper.ToOpacityMode(ColorHelper.FORST02));
 	}
 	
 	@Override
